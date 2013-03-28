@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def create
     email = params[:user][:email]
     password = params[:user][:password]
-    response = MonkID.register!(email: email, password: password)
+    response = MonkId.register!(email: email, password: password)
 
     authentication_token = response["user"]["authentication_token"]
     monk_id = response["user"]["guid"]
@@ -87,4 +87,9 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def home
+
+  end
+
 end

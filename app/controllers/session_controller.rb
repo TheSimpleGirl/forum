@@ -3,7 +3,7 @@ class SessionController < ApplicationController
   end
 
   def create
-    response = MonkID.login!(email: params[:email], password: params[:password])
+    response = MonkId.login!(email: params[:email], password: params[:password])
     session["user_guid"] = response["user"]["guid"]
 
     user = User.find_by_monk_id(response["user"]["guid"])

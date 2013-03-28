@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :monk_id
       t.string :authentication_token
-      t.boolean :admin
+      t.boolean :admin, default: false
 
       t.timestamps
     end
